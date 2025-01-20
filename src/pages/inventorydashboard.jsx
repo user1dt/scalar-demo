@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronUp, ChevronDown, MoreHorizontal, Filter, Download, Bell, Settings, Users, Box, ShoppingCart, BarChart2, HelpCircle, LogOut } from 'lucide-react';
+import { Link, Links } from 'react-router-dom';
 
 const Dashboard = () => {
   const metrics = [
@@ -11,17 +12,17 @@ const Dashboard = () => {
   ];
 
   return (
-    
     <div className="flex h-screen bg-gray-50">
+      <Link to={path}></Link>
       {/* Sidebar */}
       <div className="w-64 bg-white border-r">
         <div className="p-4">
           <img src="" alt="SCALA" className="h-5px" />
           <nav className="space-y-2">
-            <NavItem icon={BarChart2} text="Dashboard" active />
-            <NavItem icon={Box} text="Shipment" />
-            <NavItem icon={Box} text="Inventory" />
-            <NavItem icon={ShoppingCart} text="Orders" />
+            <NavItem icon={BarChart2} text="Dashboard" active  />
+            <NavItem icon={Box} text="Shipment" path="/edit" />
+            <NavItem icon={Box} text="Inventory" path="/inventory" />
+            <NavItem icon={ShoppingCart} text="Orders" path="/list"/>
             <NavItem icon={Box} text="Returns & Refunds" />
             <NavItem icon={Users} text="Customers" />
             <NavItem icon={Users} text="Sales Personnel" />
